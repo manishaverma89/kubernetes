@@ -1,4 +1,4 @@
-we established communication between two pods 
-we get the IP addressses of Pods by using command "kubectl get pods -o wide"
+Established communication between two pods,
+get the IP addressses of Pods by using command "kubectl get pods -o wide"
 Then after executing the pod in an interactive terminal ,checked the connection b/w two pods
 using curl command as " curl IPAddress-of-pod:portNumber "
