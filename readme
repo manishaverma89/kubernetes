@@ -1,0 +1,14 @@
+first created a Deployment "deployhttpd.yml"
+here kind of this Deployment is "Deployment"
+in which replica is set to 1 that means one pod is always running , replica set will create a new pod if the existing pod is terminated or deployed
+label is set to "deployment"
+container "c00" is running httpd
+-------
+An then a service is created using yml "service.yml"
+here kind of this service is "Service"
+name of this service is "demoservice"
+selector name is defined as "deployment" , which means this service will be applied to any Pod which has the label "deployment"
+type of this service is "ClusterIP", which is applied only within the cluster
+port number for this service is set to 80, and the target port is also 80
+
+
