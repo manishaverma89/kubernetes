@@ -4,7 +4,7 @@ here kind of this Deployment is "Deployment"
 in which replica is set to 1 that means one pod is always running , replica set will create a new pod if the existing pod is terminated or deployed
 label is set to "deployment"
 container "c00" is running httpd
--------
+--------
 service.yml
 An then a service is created using yml "service.yml"
 here kind of this service is "Service"
