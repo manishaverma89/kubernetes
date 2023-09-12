@@ -1,0 +1,6 @@
+After applying these yml files using command: kubectl apply -f deploy_httpd.yml    and    kubectl apply -f svc.yml
+step1: Run a command: kubectl get service/svc
+you will  get a list clusterIP, PORT(s) etc, check here in the list, clusterIp is mapped to Port[80:31009/TCP], or it can be any other port number b/w 3000-32767
+step2: To get the full description of service you create, run a command: kubectl describe svc [service name]
+Now to access the port on the internet, type: PUblic-DNS of Node:portnumber in the browser
+we will get the "portnumber" by running command: kubectl get svc
