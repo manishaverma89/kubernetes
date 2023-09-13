@@ -1,1 +1,21 @@
+Emptydir volume is accessible  inside a pod
+If any container is deleted, now when new container is created, volume will definetely be shared by that new container
+If in case Pod is deleted, volume will also be deleted. And when new Pod is recreated, a new volume will be recreated called "Emptydir"[An empty volume]
+Its main purpose is to share volume b/w multiple containers but only within a same pod
+volume is mounted to each container using variable "mountvolume", so each container will access same volume
 
+-----
+ Commands:
+kubectl apply -f emptydir.yml
+kubectl get pods
+Execute  voltestpod  in an interactive terminal and go inside container1
+kubectl exec voltestpod -c c01 -it -- /bin/bash
+cd /tmp
+ls
+you'll see xchange dir here
+cd xchange
+Make a file here (file1.txt)
+Now go inside container c02
+cd /tmp cd data
+you'll see file.txt here, Edit it and exit
+Now go inside c01 & check updation done by you in file1 is reflecting there ( bcoz volume is shared among c01 & c02 )
