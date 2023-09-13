@@ -1,0 +1,20 @@
+Here’s a Pod created inside a host machine 
+Volume is mapped with hostpath and is defined as hostpath
+Hostpath’s data dir ie.  /tmp/data is mapped with the volume of Pod
+So that whatever we will update in pod’s container that will be stored in /tmp/data
+This data will be accessible from the container and also from the host machine viceversa
+This data can be mapped to any other POD inside this host machine
+
+How to run
+
+kubectl apply -f hostpath.yml
+kubectl get pods
+Now execute pod in an interactive terminal and go inside  /tmp/hostpath, ie.
+kubectl exec -it myvolhostpath -- /bin/bash
+cd  /tmp/hostpath
+Make a file1.txt  here 
+Now, do
+minikube ssh (on docker hub to go inside host machine) 
+ls /tmp/data
+You will see  file1.txt here
+
